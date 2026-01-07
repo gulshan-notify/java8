@@ -1,5 +1,10 @@
 package com.example.Java8.Controller;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class StreamApi {
 
      public void practice(){
@@ -7,7 +12,15 @@ public class StreamApi {
      }
 
      public static void main(String[] args) {
-          System.out.println("Hyy , What's Up!");
+
+          List<Integer> list =Arrays.asList(1,2,3,34,34,3,4,5,23,2,342,235,555);
+
+          List<Integer>list1= list.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+
+
+
+
+          System.out.println("Result: "+list1);
      }
 
 }
