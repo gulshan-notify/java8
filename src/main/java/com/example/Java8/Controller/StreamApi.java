@@ -7,20 +7,16 @@ import java.util.stream.Collectors;
 
 public class StreamApi {
 
-     public void practice(){
-         // System.out.println("hbvsxhj");
-     }
-
      public static void main(String[] args) {
 
           List<Integer> list =Arrays.asList(1,2,3,34,34,3,4,5,23,2,342,235,555);
 
           List<Integer>list1= list.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+          List<Integer>list2= list.stream().map(String::valueOf).filter(x-> x.startsWith("2")).map(Integer::valueOf).collect(Collectors.toList());
 
 
 
-
-          System.out.println("Result: "+list1);
+          System.out.println("Result: "+list2);
      }
 
 }
