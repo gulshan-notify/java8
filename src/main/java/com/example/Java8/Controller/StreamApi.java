@@ -13,10 +13,11 @@ public class StreamApi {
 
           List<Integer>list1= list.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
           List<Integer>list2= list.stream().map(String::valueOf).filter(x-> x.startsWith("2")).map(Integer::valueOf).collect(Collectors.toList());
+          int no= list.stream().reduce(10,(a,b)-> a+b);
 
 
 
-          System.out.println("Result: "+list2);
+          System.out.println("Result: "+no);
      }
 
 }
