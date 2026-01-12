@@ -2,6 +2,7 @@ package com.example.Java8.Controller;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -27,8 +28,12 @@ public class StreamApi {
          String res2= str2.chars().mapToObj(x-> Character.toLowerCase(Character.valueOf((char)x))).sorted().map(String::valueOf).collect(Collectors.joining());
          int ans= list.stream().min((a,b)-> Integer.compare(a,b)).get();
          int ans2= list.stream().mapToInt(Integer::intValue).sum();
+         Double ans3= list.stream().mapToInt(Integer::intValue).average().getAsDouble();
 
-          System.out.println("Result: "+ans2);
+         List<Character>list4= str.replace(" ", "").chars().mapToObj(x -> Character.toLowerCase(Character.valueOf((char) x))).collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new,Collectors.counting())).
+                 entrySet().stream().filter(x-> x.getValue()>1).map(y-> y.getKey()).collect(Collectors.toList());
+
+          System.out.println("Result: "+list4);
      }
 
 }
