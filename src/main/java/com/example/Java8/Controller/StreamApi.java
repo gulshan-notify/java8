@@ -21,8 +21,14 @@ public class StreamApi {
          List<Character> list3= str.replace(" ","").chars().mapToObj(x-> Character.toLowerCase(Character.valueOf((char)x))).collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).
                   entrySet().stream().filter(a-> a.getValue()>1).map(b-> b.getKey()).collect(Collectors.toList());
 
+          String str1="ABCD";
+          String str2="DCBA";
+         String res1= str1.chars().mapToObj(x-> Character.toLowerCase(Character.valueOf((char)x))).sorted().map(String::valueOf).collect(Collectors.joining());
+         String res2= str2.chars().mapToObj(x-> Character.toLowerCase(Character.valueOf((char)x))).sorted().map(String::valueOf).collect(Collectors.joining());
+         int ans= list.stream().min((a,b)-> Integer.compare(a,b)).get();
+         int ans2= list.stream().mapToInt(Integer::intValue).sum();
 
-          System.out.println("Result: "+list3);
+          System.out.println("Result: "+ans2);
      }
 
 }
