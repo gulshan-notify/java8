@@ -34,6 +34,8 @@ public class StreamApi {
                  entrySet().stream().filter(x-> x.getValue()>1).map(y-> y.getKey()).collect(Collectors.toList());
          List<Integer>list6= list.stream().distinct().toList();
          List<Integer>list7= list.stream().filter(x->x%2==0).collect(Collectors.toList());
+         Integer list8= list.stream().mapToInt(Integer::valueOf).max().getAsInt();
+
 
 
           System.out.println("Result: "+list6);
