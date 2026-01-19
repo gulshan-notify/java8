@@ -33,6 +33,9 @@ public class StreamApi {
          List<Character>list4= str.replace(" ", "").chars().mapToObj(x -> Character.toLowerCase(Character.valueOf((char) x))).collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new,Collectors.counting())).
                  entrySet().stream().filter(x-> x.getValue()>1).map(y-> y.getKey()).collect(Collectors.toList());
          List<Integer>list6= list.stream().distinct().toList();
+         List<Integer>list7= list.stream().filter(x->x%2==0).collect(Collectors.toList());
+
+
           System.out.println("Result: "+list6);
      }
 
