@@ -35,7 +35,7 @@ public class StreamApi {
          List<Integer>list6= list.stream().distinct().toList();
          List<Integer>list7= list.stream().filter(x->x%2==0).collect(Collectors.toList());
          Integer list8= list.stream().mapToInt(Integer::valueOf).max().getAsInt();
-
+         List<Integer>list9 =list.stream().sorted(Comparator.reverseOrder()).toList();
 
 
           System.out.println("Result: "+list6);
